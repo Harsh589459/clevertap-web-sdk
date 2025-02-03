@@ -12,14 +12,18 @@ clevertap.onUserLogin.push({
       "Name": name,            // String
       "Email": email,         // Email address of the user
       "Identity": phone,           // Phone (with the country code)
+      "MSG-email": false,                // Disable email notifications
+      "MSG-push": true,                  // Enable push notifications
+      "MSG-sms": true,                   // Enable sms notifications
+      "MSG-whatsapp": true,
      
     }
    })
-   clevertap.profile.push({
-    "Site": {
-      "Customer Type": "gold",
-    }
-   });
+//    clevertap.profile.push({
+//     "Site": {
+//       "Customer Type": "gold",
+//     }
+//    });
    
    window.alert("Profile updated successfully")
 
@@ -38,4 +42,13 @@ clevertap.notifications.push({
 })
     console.log("Push accepted call2")
 
+})
+
+document.getElementById('productViewed').addEventListener('click',function(){
+    clevertap.event.push("Product Viewed", {
+        "Product name":"Casio Chronograph Watch",
+        "Category":"Mens Accessories",
+        "Price":59.99,
+        "Date": new Date()
+      });
 })
