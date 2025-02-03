@@ -1,40 +1,4 @@
-console.log('External JS file linked');
 
-// Function to generate a random alphanumeric string of specified length
-
-
-
-
-document.getElementById('loginbutton').addEventListener('click',function(){
-    var name = document.getElementById('name').value
-    var email = document.getElementById('email').value
-    var phone = document.getElementById('phone').value
-    console.log(name,email,phone)
-
-//     with the exception of one of Identity, Email, or FBID
-// each of the following fields is optional
-
-clevertap.onUserLogin.push({
-    "Site": {
-      "Name": name,            // String
-      "Email": email,         // Email address of the user
-      "Identity": phone,           // Phone (with the country code)
-      "MSG-email": false,                // Disable email notifications
-      "MSG-push": true,                  // Enable push notifications
-      "MSG-sms": true,                   // Enable sms notifications
-      "MSG-whatsapp": true,
-     
-    }
-   })
-//    clevertap.profile.push({
-//     "Site": {
-//       "Customer Type": "gold",
-//     }
-//    });
-   
-   window.alert("Profile updated successfully")
-
-})
 
 
 document.getElementById('pushNotifBtn').addEventListener('click', function () {
