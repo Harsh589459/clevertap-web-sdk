@@ -92,13 +92,54 @@ document.getElementById('triggerEventBtn').addEventListener('click', function ()
     }, 1000); // Adjust timeout as needed based on modal load time
 });
 
-// Add event listener to trigger button
-document.getElementById('testEvent').addEventListener('click', function () {
-    // Push CleverTap event
-    clevertap.event.push("test_event");
-    console.log("CleverTap Event: Test Event triggered");
+// // Add event listener to trigger button
+// document.getElementById('testEvent').addEventListener('click', function () {
+//     // Push CleverTap event
+//     clevertap.event.push("test_event");
+//     console.log("CleverTap Event: Test Event triggered");
 
-    setTimeout(() => {
-        handlePopup();
-    }, 1000); // Adjust timeout as needed based on modal load time
-});
+//     setTimeout(() => {
+//         handlePopup();
+//     }, 1000); // Adjust timeout as needed based on modal load time
+// });
+
+async function getIpDetails(){
+    const ip = '67.250.186.196';
+    const accessKey = '4c9ec11e-768b-487d-96f7-0551db09258d';
+    const url = 'https://apiip.net/api/check?ip='+ ip +'&accessKey='+ accessKey; 
+  
+    // Make a request and store the response
+    const response = await fetch(url);
+  
+    // Decode JSON response:
+    const result = await response.json();
+  
+    // Output the "code" value inside "currency" object
+    return result;
+}
+const fireCleaverTapEvent = async response => {
+    // const deviceInformation = getDeviceInformation();
+    const ipDetails = await getIpDetails();
+    clevertap.profile.push({
+      "Site": {
+        "isPasswordCreated":true,
+        latitude: ipDetails?.latitude,
+        longitude: ipDetails?.longitude,
+        country: ipDetails?.countryName,
+        ip: ipDetails?.ip
+      }
+     });
+    // if (ipDetails?.latitude && ipDetails?.longitude) {
+    //   clevertap.getLocation(ipDetails?.latitude, i)
+    // }
+    if (ipDetails?.latitude && ipDetails?.longitude) {
+      clevertap.getLocation(ipDetails?.latitude, ipDetails?.longitude);
+    }
+
+   clevertap.event.push("test_event", {
+      "Sign_Up_Completed":true,
+      "Timestamp": new Date().getTime()
+    });
+
+
+  };
