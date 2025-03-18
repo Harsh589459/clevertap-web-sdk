@@ -91,3 +91,14 @@ document.getElementById('triggerEventBtn').addEventListener('click', function ()
         handlePopup();
     }, 1000); // Adjust timeout as needed based on modal load time
 });
+
+// Add event listener to trigger button
+document.getElementById('testEvent').addEventListener('click', function () {
+    // Push CleverTap event
+    clevertap.event.push("test_event");
+    console.log("CleverTap Event: Test Event triggered");
+
+    setTimeout(() => {
+        handlePopup();
+    }, 1000); // Adjust timeout as needed based on modal load time
+});
