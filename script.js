@@ -120,6 +120,7 @@ async function getIpDetails(){
 const fireCleaverTapEvent = async response => {
     // const deviceInformation = getDeviceInformation();
     const ipDetails = await getIpDetails();
+    console.log("ipDetails",ipDetails)
     clevertap.profile.push({
       "Site": {
         "isPasswordCreated":true,
@@ -136,7 +137,7 @@ const fireCleaverTapEvent = async response => {
       clevertap.getLocation(ipDetails?.latitude, ipDetails?.longitude);
     }
 
-   clevertap.event.push("test_event", {
+   clevertap.event.push("test_event1", {
       "Sign_Up_Completed":true,
       "Timestamp": new Date().getTime()
     });
