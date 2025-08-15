@@ -9,7 +9,7 @@
     <script type="text/javascript">
         var clevertap = { event: [], profile: [], account: [], onUserLogin: [], notifications: [], privacy: [] };
         // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
-        clevertap.account.push({ "id": "TEST-946-KR9-6K7Z" }, "eu1","Target_Domain"); 
+        clevertap.account.push({ "id": "TEST-946-KR9-6K7Z" }, "eu1"); 
         console.log('no region specified sets it to default europe region')
         clevertap.privacy.push({ optOut: false }); //set the flag to true, if the user of the device opts out of sharing their data
         clevertap.privacy.push({ useIP: true }); //set the flag to true, if the user agrees to share their IP data
@@ -36,7 +36,7 @@
         <option value="Platinum">Platinum</option>
 
     </select>
-    <button id="loginbutton">Click here</button>
+    <button id="loginbutton">Click here also</button>
 
     <button id="pushNotifBtn">Click to Enable Push Notifications</button>
 
