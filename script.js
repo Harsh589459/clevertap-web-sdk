@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const ct_id = urlParams.get('ct_id');
 console.log("ct_id",ct_id);
 
-if (ctIdentity) {
+if (ct_id) {
   clevertap.onUserLogin.push({
     "Site": {
       "Identity": ct_id  // same Identity value used in the native app
