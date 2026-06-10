@@ -5,7 +5,7 @@ console.log("ct_id",ct_id);
 if (ct_id) {
   clevertap.onUserLogin.push({
     "Site": {
-      "Identity": ct_id  // same Identity value used in the native app
+      "Phone": ct_id  // same Identity value used in the native app
     }
   });
 }
