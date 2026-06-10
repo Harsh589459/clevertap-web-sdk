@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const ct_id = '+'+urlParams.get('ct_id');
-console.log("ct_id",ct_id);
+console.log("ct_idd",ct_id);
 
 if (ct_id) {
   clevertap.onUserLogin.push({
