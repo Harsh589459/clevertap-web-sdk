@@ -1,0 +1,10 @@
+{
+  "name": "CleverTap PWA App",
+  "short_name": "CTPWA",
+  "display": "standalone",
+  "icons": [{
+    "src": "https://images.cnbctv18.com/uploads/2026/06/group-1171277051-2026-06-c7b81749afc77f7c7b9968af6103f096.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
